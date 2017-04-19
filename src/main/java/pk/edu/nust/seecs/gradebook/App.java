@@ -4,6 +4,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
 import pk.edu.nust.seecs.gradebook.dao.CloDao;
 import pk.edu.nust.seecs.gradebook.entity.Clo;
 
@@ -42,10 +47,18 @@ public class App {
         System.out.println(clodao.getCloById(1));
 */
         businessObject myBo = new businessObject();
-    	Clo clo = new Clo();
+    	
+        Resource r = new ClassPathResource("applicationContext.xml");
+
+        BeanFactory factory = new XmlBeanFactory(r);
+
+        Clo clo = (Clo) factory.getBean("clo");
+        
+/*        Clo clo = new Clo();
         clo.setName("CLO 1");
         clo.setDescription("This is for testing");
         clo.setPlo("3");
+        */
         
         myBo.addCLO(clo);
     }

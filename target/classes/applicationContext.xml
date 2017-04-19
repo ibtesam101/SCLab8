@@ -1,1 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<bean id="clo" class="pk.edu.nust.seecs.gradebook.entity.Clo">
+<constructor-arg value="myCourse"></constructor-arg>
+<constructor-arg value="this is a test course"></constructor-arg>
+<constructor-arg value="plo1"></constructor-arg>
+<constructor-arg value="bt2"></constructor-arg>
+</bean>
+
+
+</beans>
