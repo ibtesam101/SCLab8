@@ -10,7 +10,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 import pk.edu.nust.seecs.gradebook.dao.CloDao;
-import pk.edu.nust.seecs.gradebook.entity.Clo;
+import pk.edu.nust.seecs.gradebook.entity.*;
 
 import pk.edu.nust.seecs.gradebook.business.*;
 
@@ -59,8 +59,9 @@ public class App {
         clo.setDescription("This is for testing");
         clo.setPlo("3");
         */
-        
+        Teacher teach = (Teacher) factory.getBean("teacher");
         myBo.addCLO(clo);
+        myBo.addTeacher(teach);
     }
 
 }
