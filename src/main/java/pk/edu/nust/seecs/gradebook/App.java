@@ -7,6 +7,9 @@ import java.util.Date;
 import pk.edu.nust.seecs.gradebook.dao.CloDao;
 import pk.edu.nust.seecs.gradebook.entity.Clo;
 
+import pk.edu.nust.seecs.gradebook.business.*;
+
+
 /**
  * My main App. 
  * <p>
@@ -16,7 +19,7 @@ import pk.edu.nust.seecs.gradebook.entity.Clo;
 public class App {
 
     public static void main(String[] args) {
-        CloDao clodao = new CloDao();
+        /*CloDao clodao = new CloDao();
 
         // Add new clo
         Clo clo = new Clo();
@@ -37,8 +40,14 @@ public class App {
 
         // Get clo by id
         System.out.println(clodao.getCloById(1));
-
+*/
+        businessObject myBo = new businessObject();
+    	Clo clo = new Clo();
+        clo.setName("CLO 1");
+        clo.setDescription("This is for testing");
+        clo.setPlo("3");
         
+        myBo.addCLO(clo);
     }
 
 }
