@@ -36,8 +36,9 @@ public class businessObject {
 		gDao.addGrade(t);
 	}
 	
-	public void addCLO(Clo t){
+	public boolean addCLO(Clo t){
 		CloDao cDao = new CloDao();
 		cDao.addClo(t);
+		return true;
 	}
 }
