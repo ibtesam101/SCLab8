@@ -53,15 +53,16 @@ public class App {
         
         businessObject myBo = (businessObject) factory.getBean("bo");
         
-        Clo clo = (Clo) factory.getBean("clo");
+//        Clo clo = (Clo) factory.getBean("clo");
         
-/*        Clo clo = new Clo();
+        Clo clo = new Clo();
         clo.setName("CLO 1");
         clo.setDescription("This is for testing");
         clo.setPlo("3");
-        */
         
         myBo.addCLO(clo);
+        
+        System.out.println(myBo.getClo(11));
     }
 
 }

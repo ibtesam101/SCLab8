@@ -3,9 +3,13 @@ package pk.edu.nust.seecs.gradebook.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Expression;
+import org.hibernate.criterion.Restrictions;
 
 import pk.edu.nust.seecs.gradebook.entity.Clo;
 import pk.edu.nust.seecs.gradebook.util.HibernateUtil;
@@ -93,11 +97,20 @@ public class CloDao {
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            trns = session.beginTransaction();
+            /*trns = session.beginTransaction();
             String queryString = "from Clo where id = :id";
             Query query = session.createQuery(queryString);
             query.setInteger("id", cloid);
-            clo = (Clo) query.uniqueResult();
+            clo = (Clo) query.uniqueResult();*/
+        	
+        	Criteria cr = session.createCriteria(Clo.class);
+        	
+        	cr.add(Restrictions.eq("cloId", cloid));
+        	
+        	List result= cr.list();
+        	
+        	clo = (Clo) result.get(0);
+        	
         } catch (RuntimeException e) {
             e.printStackTrace();
         } finally {
