@@ -2,6 +2,7 @@ package pk.edu.nust.seecs.gradebook;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.springframework.beans.factory.BeanFactory;
@@ -60,9 +61,22 @@ public class App {
         clo.setDescription("This is for testing");
         clo.setPlo("3");
         
+        
+        
+        
+        Content cont = new Content();
+        ArrayList<Clo> a=new ArrayList<Clo>();
+        a.add(clo);
+        cont.setClo(a);
+        Date d=new Date();
+        cont.setDescription("This is stuff");
+        cont.setStarttime(d);
+        cont.setEndtime(d);
+        cont.setTitle("Content Title");
+        
         myBo.addCLO(clo);
         
         System.out.println(myBo.getClo(11));
     }
 
-}
+} 
