@@ -46,12 +46,13 @@ public class App {
         // Get clo by id
         System.out.println(clodao.getCloById(1));
 */
-        businessObject myBo = new businessObject();
     	
         Resource r = new ClassPathResource("applicationContext.xml");
 
         BeanFactory factory = new XmlBeanFactory(r);
-
+        
+        businessObject myBo = (businessObject) factory.getBean("bo");
+        
         Clo clo = (Clo) factory.getBean("clo");
         
 /*        Clo clo = new Clo();
@@ -59,9 +60,8 @@ public class App {
         clo.setDescription("This is for testing");
         clo.setPlo("3");
         */
-        Teacher teach = (Teacher) factory.getBean("teacher");
+        
         myBo.addCLO(clo);
-        myBo.addTeacher(teach);
     }
 
 }

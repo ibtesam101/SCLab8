@@ -14,6 +14,13 @@
 		<constructor-arg value="bt2"></constructor-arg>
 	</bean>
 
+	<bean id="bo" class="pk.edu.nust.seecs.gradebook.business.businessObject">
+	    
+	</bean>
+	
+	<bean id="clodao" class="pk.edu.nust.seecs.gradebook.dao.CloDao">
+	    
+	</bean>
 	<bean id="c1" class="pk.edu.nust.seecs.gradebook.entity.Course">
 		<property name="classtitle" value="thisClass"></property>
 	</bean>
